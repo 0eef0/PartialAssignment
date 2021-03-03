@@ -1,0 +1,24 @@
+$text-color: red;
+$background: yellow;
+//change variables according to site
+
+div#footer{
+    margin-top: 3rem;
+    footer{
+        background-color: $background;
+        ul{
+            margin: 0;
+            padding: 1rem;
+            list-style: none;
+            li{
+                h1{
+                    text-align: center;
+                    font-size: calc(1rem + 1vw);
+                }
+                p{
+                    font-size: calc(0.25rem + 1vw);
+                }
+            }
+        }
+    }
+}

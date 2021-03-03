@@ -1,0 +1,87 @@
+/* Define variables for the primary assests like color and font */
+$main-color: lightblue;
+$main-stack: Helvetica, sans-serif;
+$border-color: #333;
+$top-width: 680px;
+$footer-width: 5rem;
+$bgcolor: blue;
+$textcolor: red;
+$fontsize: 25px;
+
+nav{
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    p{
+        color: yellow;
+        &:hover{
+            color: blue;
+        }
+    }
+}
+
+$font-weight: (
+    'small': 30px,
+    'medium': 500px,
+    'large': 700px,
+);
+@function weight($name){
+    @return map-get($map: $font-weight, $key: $name);
+}
+
+body{
+    @import 'partials/_nav3.scss';
+    @import 'partials/footer1';
+
+    background-color: $bgcolor;
+    color: $textcolor;
+    font-size: $fontsize;
+    font-family: $main-stack;
+    li{
+        font-size: weight('small');
+    }
+}
+@mixin potato{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+p{
+    @include potato();
+}
+
+@mixin thisIsAMixin {
+    border: black 2px solid;
+    width: 50% - 9%;
+}
+div#mixin{
+    @include thisIsAMixin();
+}
+
+$text-color: black;
+@mixin theme($dark-theme: true){
+    @if $dark-theme{
+        background-color: darken($main-color,100%);
+        color: lighten($text-color, 100%);
+    }
+}
+.dark{
+    @include theme(true);
+}
+.light{
+    @include theme(false);
+}
+
+#propOne{
+    background-color: red;
+    color: orange;
+}
+#propTwo{
+    @extend #propOne;
+    &:hover{
+        background-color: green;
+    }
+}

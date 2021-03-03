@@ -1,0 +1,30 @@
+$text-color: green;
+$background: red;
+//change variables according to site
+
+div{
+    width: 100%;
+    nav{
+        background-color: $background;
+        width: 90%;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                width: 24%;
+                display: inline-block;
+                text-align: center;
+                a{
+                    font-size: calc(0.5rem + 2vw);
+                    color: $text-color;
+                    text-decoration: solid 2px $text-color;
+                }
+            }
+        }
+    }
+}
